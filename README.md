@@ -1,4 +1,4 @@
-<h1>Invoice Virtuemart Plugine</h1>
+<h1>Invoice Virtuemart Plugin</h1>
 
 <h3>Установка</h3>
 
