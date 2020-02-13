@@ -3,7 +3,7 @@
 <h3>Установка</h3>
 
 1. [Скачайте плагин](https://github.com/Invoice-LLC/Invoice.Module.Joomla-Virtuemart.git) и скопируйте содержимое архива в корень сайта
-2. Перейдите во вкладку **Virtuemart->Payment methods**
+2. Перейдите во вкладку **Virtuemart->Payment methods**<br>
 ![Imgur](https://imgur.com/Z4dR9eR.png)
 3. Нажмите **new** и введите данные как на скриншоте
 ![Imgur](https://imgur.com/IeEpqoR.png)
