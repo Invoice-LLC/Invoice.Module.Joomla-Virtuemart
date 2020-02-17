@@ -31,7 +31,6 @@ class plgVmPaymentInvoice extends vmPSPlugin
     public function __construct(&$subject, $config)
     {
         parent::__construct($subject, $config);
-        $this->tableFields = array_keys ($this->getTableSQLFields ());
 
         $varsToPush        = array(
             'api_key' => array('','string'),
