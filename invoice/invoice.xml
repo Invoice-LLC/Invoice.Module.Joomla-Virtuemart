@@ -11,6 +11,19 @@
     <files>
         <filename plugin="invoice">invoice.php</filename>
         <filename>logo.png</filename>
+        <filename>sdk/RestClient.php</filename>
+        <filename>sdk/PaymentInfo.php</filename>
+        <filename>sdk/RefundInfo.php</filename>
+        <filename>sdk/TerminalInfo.php</filename>
+        <filename>sdk/CREATE_TERMINAL.php</filename>
+        <filename>sdk/CREATE_PAYMENT.php</filename>
+        <filename>sdk/CREATE_REFUND.php</filename>
+        <filename>sdk/CLOSE_PAYMENT.php</filename>
+        <filename>sdk/common/ITEM.php</filename>
+        <filename>sdk/common/ORDER.php</filename>
+        <filename>sdk/common/PAYMENT_METHOD.php</filename>
+        <filename>sdk/common/REFUND_INFO.php</filename>
+        <filename>sdk/common/SETTINGS.php</filename>
     </files>
 
     <vmconfig>
