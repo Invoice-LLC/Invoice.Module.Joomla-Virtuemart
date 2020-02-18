@@ -1,5 +1,7 @@
 <h1>Invoice Virtuemart Plugin</h1>
 
+**Перед установкой обязательно проверьте, что оплата совершается в рублях.**
+
 <h3>Установка</h3>
 
 1. [Скачайте плагин](https://github.com/Invoice-LLC/Invoice.Module.Joomla-Virtuemart/archive/master.zip)
