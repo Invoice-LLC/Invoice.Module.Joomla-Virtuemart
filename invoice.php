@@ -210,7 +210,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $orderModel     = VmModel::getModel('orders');
         $order          = $orderModel->getOrder($order_id);
         $plugin_method  = $this->getVmPluginMethod($order['details']['BT']->virtuemart_paymentmethod_id);
-        $key = $plugin_method->api_key;
+        $key            = $plugin_method->api_key;
 
         if($key == null) {
             die("api key is invalid");
