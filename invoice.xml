@@ -30,7 +30,7 @@
         <fields name="params">
             <fieldset name="payment" addfieldpath="/administrator/components/com_virtuemart/fields">
                 <field type="text" name="api_key" size="50" label="API Key" default="" description="Ваш ключ API" />
-                <field type="text" name="login" size="50" label="Login" default="79991234567" description="Логин от личного кабинета" />
+                <field type="text" name="login" size="50" label="Login(н-р: 79991234567)" default="" description="Логин от личного кабинета" />
             </fieldset>
         </fields>
     </vmconfig>
