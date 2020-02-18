@@ -153,7 +153,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
             $item->name = $product->product_name;
             $item->quantity = $product->quantity;
             $item->discount = $product->prices["discountAmount"];
-            $item->price = $product->prices["product_price"];
+            $item->price = $product->prices["salesPrice"];
             $item->resultPrice = $product->prices["salesPriceTt"];
             array_push($receipt, $item);
         }
