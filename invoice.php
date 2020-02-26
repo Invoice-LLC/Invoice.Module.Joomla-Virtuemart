@@ -46,6 +46,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $this->terminal_id = $this->getTerminalId();
 
         if($this->login == null or $this->api_key == null) {
+            $this->log("APIError: Login or api key is null\n");
             throw new Exception("Ошибка при создании платежа");
         }
 
@@ -58,6 +59,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
             }
 
             if($terminal == null or $terminal->error != null) {
+                $this->log("ERROR " . json_encode($terminal). '\n');
                 throw new Exception("Ошибка при создании терминала");
             }
             $this->terminal_id = $terminal->id;
@@ -170,8 +172,10 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $payment = $this->client->CreatePayment($create_payment);
 
         if($payment == null or $payment->error != null) {
+            $this->log("ERROR " . json_encode($payment). '\n');
             throw new Exception("Ошибка создания платежа, обратитесь к администратору");
         } else {
+            $this->log("Redirect\n");
             header("Location: ".$payment->payment_url);
         }
 
@@ -183,7 +187,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
     {
         $postData = file_get_contents('php://input');
         $notification = json_decode($postData, true);
-
+        $this->log("CALLBACK " . $postData. '\n');
         $signature = null;
         if(!isset($notification["signature"])) {
             die("the signature must not be null");
@@ -262,7 +266,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $create_terminal->name = JFactory::getApplication()->getCfg('sitename');
         $create_terminal->defaultPrice = 0;
         $create_terminal->description = JFactory::getApplication()->getCfg('MetaDesc');
-
+        $this->log("CreateTerminal: " . json_encode($create_terminal). '\n');
         return $this->client->CreateTerminal($create_terminal);
     }
 
@@ -281,5 +285,11 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $id = fgets($fp, 999);
         fclose($fp);
         return $id;
+    }
+
+    private function log($log) {
+        $fp = fopen('invoice_payment.log', 'a+');
+        fwrite($fp, $log);
+        fclose($fp);
     }
 }
