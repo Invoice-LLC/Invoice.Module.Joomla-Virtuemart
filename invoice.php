@@ -149,6 +149,9 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $invoice_order->id = $order['details']['BT']->virtuemart_order_id;
         $create_payment->order = $invoice_order;
 
+        $create_payment->phone = $order["details"]["BT"]->phone_1;
+        $create_payment->mail = $order["details"]["BT"]->email;
+
         $receipt = array();
         foreach ($cart->products as $product) {
             $item = new ITEM();
