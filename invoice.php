@@ -146,7 +146,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
         $invoice_order = new ORDER();
         $invoice_order->currency = "RUB";
         $invoice_order->amount = $order['details']['BT']->order_total;
-        $invoice_order->id = $order['details']['BT']->virtuemart_order_id;
+        $invoice_order->id = $order['details']['BT']->virtuemart_order_id . "-" . bin2hex(random_bytes(5));
         $create_payment->order = $invoice_order;
 
         $create_payment->phone = $order["details"]["BT"]->phone_1;
@@ -211,7 +211,7 @@ class plgVmPaymentInvoice extends vmPSPlugin
         if(!isset($notification["order"]["id"])) {
             die("Order not found");
         } else {
-            $order_id = $notification["order"]["id"];
+            $order_id = strstr($notification["order"]["id"], "-", true);
         }
 
         $orderModel     = VmModel::getModel('orders');
